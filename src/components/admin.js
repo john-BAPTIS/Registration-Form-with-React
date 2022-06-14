@@ -8,7 +8,8 @@ const Employee = props => (
         <td>{props.employee.firstname}</td>
         <td>{props.employee.lastname}</td>
         <td>{props.employee.telephone}</td>
-        <td><Link to={'/edit/'+ props.employee._id}>edit</Link></ td> <td><a className="button" type="button" href="" onClick={() => {props.handleDelete(props.employee._id)}}>delete</a>
+        <td><Link to={'/edit/'+props.employee._id}>edit</Link></ td>
+        <td><a className="button" type="button" href="" onClick={() => {props.handleDelete(props.employee._id)}}>delete</a>
         </td>
     </tr>
 );

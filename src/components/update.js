@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import { TextField, Stack, Autocomplete, MenuItem, Input, FilledInput } from '@mui/material';
+import { TextField, MenuItem } from '@mui/material';
 import { data } from "./values";
 
 
@@ -28,7 +28,6 @@ export default class Update extends Component{
         this.handleLocation = this.handleLocation.bind(this);
         this.handleDepartment = this.handleDepartment.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
     componentDidMount(){
@@ -110,11 +109,11 @@ export default class Update extends Component{
             department: this.state.department
         }
 
-        axios.post('http://localhost:4000/employee/add', employee)
+        axios.post('http://localhost:4000/employee/update'+this.props.match.params.id, employee)
         .then(res => console.log(res.data));
 
         console.log(employee);
-        //window.location = '/submit';
+        window.location = '/admin';
     }
 
     render(){
