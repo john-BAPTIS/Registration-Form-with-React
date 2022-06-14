@@ -1,0 +1,37 @@
+body{background: beige;}
+.navbar{
+    height: 6em;
+    font-weight: bold;
+    font-size: 20;
+}
+
+footer{
+    min-height: 5em;
+}
+
+li{
+    font-size: 18px;
+}
+
+label{
+    font-style: oblique;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+input{
+    margin-bottom: 10px;
+}
+   
+.search-btn{
+    float: right;
+}
+.search-form{
+    margin-top: 45px;
+}
+/*
+Link{
+    color: white;
+    https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9x93QN1NF9OsFTvgHIBLd7KUM1B8fkVTwpA&usqp=CAU;
+}
+*/
