@@ -17,7 +17,7 @@ export default class Home extends Component{
                         <p>Click <kbd> <Link to='/add'> here</Link></kbd> to submit your informations</p>
                     </div>
                 </div>
-                <img src="pss.png" width="100%" alt="persol-system-logo" />
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9x93QN1NF9OsFTvgHIBLd7KUM1B8fkVTwpA&usqp=CAU" width="100%" height="350px" alt="persol-system-logo" />
             </div>
         );
     }
