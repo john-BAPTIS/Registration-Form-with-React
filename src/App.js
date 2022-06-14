@@ -9,7 +9,7 @@ import Form from './components/form';
 import Adnim from './components/admin';
 import Submit from './components/Submit';
 import Update from './components/update';
-
+import Footer from './components/footer'
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <Route path='/edit/:id' element={ < Update />} />
         </Routes>
       </div>
+      < Footer />
     </BrowserRouter>
   );
 }

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import { TextField, Stack, Autocomplete, MenuItem, Input, FilledInput } from '@mui/material';
+import { TextField, Stack, Autocomplete, MenuItem, Input, FilledInput, Button } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 import { data } from "./values";
+import { Link } from "react-router-dom";
 
 
 export default class Form extends Component{
@@ -37,7 +39,7 @@ export default class Form extends Component{
         axios.get('http://localhost:4000/employee/')
         .then((res) =>{
                 this.setState({
-                    users: res.data.map(user => user.firstname),
+                    users: res.data.map(user => user.firstname || user.lastname),
                     username: res.data.username
                 });
             })
@@ -122,7 +124,7 @@ export default class Form extends Component{
         return(
             <div className="row">
                     <div className="col-md-7">
-                        <h2>Employees Registration Form</h2><br />
+                        <h2 id="header">Employees Registration Form</h2><br />
                         <form onSubmit={this.handleSubmit} >
                             
                             <div className="form-group">
@@ -217,10 +219,9 @@ export default class Form extends Component{
                         </form>
                     </div>
 
-                    <div className="col-md-5">
-                        <h2>Search</h2>
-                            <br /> <br />
+                    <div id="search-row" className="col-md-5">
                             <form>
+                            <h2>Search</h2>
                                 <select itemRef="userInput"
                                     className="form-control"
                                     value={this.state.username}
@@ -234,7 +235,9 @@ export default class Form extends Component{
                                     }
                                 </select>
                                 < p/>
-                                <button type="submit" name="submit-btn" className="btn btn-primary">Querry</button>
+                                <Link to="/dashboard">
+                                <Button variant="contained" endIcon={<SearchIcon />} type="submit" name="submit-btn">Querry</Button>
+                                </Link>
                             </form>
                     </div>
                 </div> 

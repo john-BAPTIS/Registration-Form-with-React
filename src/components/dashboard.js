@@ -48,7 +48,7 @@ export default class Adnim extends Component{
             <div>
                 <div></div>
                 <div>
-                    <h3>Staffs Dashboard</h3>
+                    <h3 id="header">Staffs Dashboard</h3>
                     <table className="table">
                         <thead className="thead-light">
                             <tr>

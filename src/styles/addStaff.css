@@ -1,8 +1,13 @@
-body{background: beige;}
+
+body{
+    background: beige;
+}
+
 .navbar{
     height: 6em;
     font-weight: bold;
     font-size: 20;
+    color: cyan;
 }
 
 footer{
@@ -19,16 +24,27 @@ label{
     font-size: 20px;
 }
 
+#header{
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(16, 47, 104);
+}
+
 input{
     margin-bottom: 10px;
 }
-   
-.search-btn{
-    float: right;
+
+#search-row{
+    margin-top: 75px;
 }
-.search-form{
-    margin-top: 45px;
+
+#search-btn{
+    color: white;
+    font-weight: bold;
+    font-size: larger;
 }
+
 /*
 Link{
     color: white;
