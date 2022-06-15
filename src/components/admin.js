@@ -73,9 +73,9 @@ export default class Adnim extends Component{
                         <tbody>
                             {this.employeeList()}
                         </tbody>
-                    </table>
+                    </table>              
+                    </div>
                 </div>
-            </div>
         );
     }
 }

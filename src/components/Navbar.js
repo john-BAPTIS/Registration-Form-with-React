@@ -1,59 +1,38 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Nav, Navbar, NavbarBrand, Container, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 
-export default class Navbar extends Component{
+export default class Navbars extends Component{
 
     render(){
+
+      const styling ={
+        navbar: {
+          marginBottom: '10px',
+          minHeight: '100px',
+        },
+        nav: {
+          fontSize: '23px',
+          maxHeight: '100px',
+          fontWeight: 'bolder',
+          color: 'white'
+        }        
+      }
+
         return(
-          <>
-            <nav className="navbar sticky navbar-dark bg-dark navbar-expand-lg">
-                <a href="/" className="navbar-brand"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9x93QN1NF9OsFTvgHIBLd7KUM1B8fkVTwpA&usqp=CAU" width="45" alt="Persol-Ghana-Logo"/></a>
-                <button classNames="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span classNames="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="navbar-item">
-                            <Link to="/" className="nav-link">Home</Link>
-                        </li>
-                        <li className="navbar-item">
-                            <Link to="/form" className="nav-link">Form</Link>
-                        </li>
-                        <noscript className="navbar-item">
-                            <Link to="/dashboard" className="nav-link">Dashboard</Link>
-                        </noscript>
-                        <li className="navbar-item">
-                            <Link to="/admin" className="nav-link">Database</Link>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-          </>
-
-            
-            /*<nav classNames="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a classNames="navbar-brand" href="#">Navbar</a>
-            <button classNames="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span classNames="navbar-toggler-icon"></span>
-            </button>
-            <div classNames="collapse navbar-collapse" id="navbarNav">
-              <ul classNames="navbar-nav">
-                <li classNames="nav-item active">
-                  <a classNames="nav-link" href="#">Home <span classNames="sr-only">(current)</span></a>
-                </li>
-                <li classNames="nav-item">
-                  <a classNames="nav-link" href="#">Features</a>
-                </li>
-                <li classNames="nav-item">
-                  <a classNames="nav-link" href="#">Pricing</a>
-                </li>
-                <li classNames="nav-item">
-                  <a classNames="nav-link disabled" href="#">Disabled</a>
-                </li>
-              </ul>
-            </div>
-          </nav>*/
-
+          <Navbar bg="primary" style={styling.navbar} sticky="top">
+            <Container fluid>
+              <Navbar.Brand href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9x93QN1NF9OsFTvgHIBLd7KUM1B8fkVTwpA&usqp=CAU" width="45" alt="Persol-Ghana-Logo"/></Navbar.Brand>
+              <Navbar.Toggle aria-controls="navbarScroll" />
+              <Navbar.Collapse id="navbarScroll">
+                <Nav className="me-auto my-2 my-lg-0" style={styling.nav} navbarScroll>
+                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/form">Form</Nav.Link>
+                  <Nav.Link href="/admin">Admin</Nav.Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Container>
+          </Navbar>
         );
     }
 }

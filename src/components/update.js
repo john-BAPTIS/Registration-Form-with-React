@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import axios from 'axios';
 import { TextField, MenuItem } from '@mui/material';
 import { data } from "./values";
+import { useParams } from "react-router-dom";
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+  
 
 
 export default class Update extends Component{
@@ -17,6 +20,7 @@ export default class Update extends Component{
             location: '',
             commencement: new Date(),
             department: '',
+            modal14: false
         }
 
         this.handleCommencement = this.handleCommencement.bind(this);
@@ -31,7 +35,8 @@ export default class Update extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:4000/employee/'+this.props.match.params.id)
+
+        axios.get('http://localhost:4000/employee/62a7c436a19d58ea1d53c2ba')
         .then((res) =>{
                 this.setState({
                     firstname: res.data.firstname,
@@ -116,8 +121,15 @@ export default class Update extends Component{
         window.location = '/admin';
     }
 
-    render(){
+    toggle = nr => () => {
+        let modalNumber = 'modal' + nr
+        this.setState({
+          [modalNumber]: !this.state[modalNumber]
+        });
+      }
 
+    render(){
+        
         return(
             <div className="row">
                 <div className="col-md-2"></div>
@@ -155,7 +167,7 @@ export default class Update extends Component{
                                 value={this.state.telephone}
                                 onChange={this.handleTelephone}/>
                             </div>
-                            <div className="form-group">
+                            <noscript className="form-group">
                                 <label>ID Number:</label>
                                 <input 
                                 type="text"
@@ -164,7 +176,7 @@ export default class Update extends Component{
                                 className="form-control"
                                 value={this.state.serial}
                                 onChange={this.handleId}/>
-                            </div>
+                            </noscript>
                             <div className="form-group">
                                 <label>Email:</label>
                                 <input 
@@ -218,6 +230,20 @@ export default class Update extends Component{
                     </div>
                 <div className="col-md-2"></div>
             </div>
+            
         );
     }
 }
+
+
+/*
+
+  
+
+  render() {
+  }
+}
+
+export default ModalPage;
+
+*/

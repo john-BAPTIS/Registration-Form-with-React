@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/addStaff.css';
-import Navbar from './components/Navbar';
+import Navbars from './components/Navbar';
 import Home from './components/Homepage';
 import Dashboard from './components/dashboard';
 import Form from './components/form';
@@ -11,12 +11,12 @@ import Submit from './components/Submit';
 import Update from './components/update';
 import Footer from './components/footer'
 
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbars />
       <div className='container'>
-        <br />
         <Routes>
           <Route path='/redirect' element={ <Navigate to="/" /> }/>
           <Route path='/' exact element={ < Home />} />
